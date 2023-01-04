@@ -16,6 +16,7 @@ Two main areas: the overall software distribution setup, with source dependencie
 * [ ] Go package names and locators
 * [ ] Finding the source
 * [ ] Module proxies
+* [ ] Checksum database
 * [ ] ...
 
 ## Snippets
@@ -31,3 +32,5 @@ https://golang.org/ref/mod#goproxy-protocol.
 ## Readings
 
 * [https://news.ycombinator.com/item?id=16679760](https://news.ycombinator.com/item?id=16679760)
+* [https://research.swtch.com/deps](https://research.swtch.com/deps)
+* [https://queue.acm.org/detail.cfm?id=3344149](https://queue.acm.org/detail.cfm?id=3344149)
