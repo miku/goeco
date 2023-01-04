@@ -8,9 +8,10 @@
 
 Two main areas: the overall software distribution setup, with source dependencies and module proxies.
 
-* [ ] Distributed packaging ecosystem
+* [ ] Distributed packaging ecosystem (tied to version control)
 * [ ] Dependencies with modules (modules and packages)
-* [ ] Minimal Version Selection algorithm
+* [ ] Referencing Code (git tag, commit id, ...)
+* [ ] The "Minimal Version Selection" algorithm
 * [ ] Difference to other systems
 * [ ] Go package names and locators
 * [ ] Finding the source
@@ -27,3 +28,6 @@ proxy.
 For details on the GOPROXY protocol, see
 https://golang.org/ref/mod#goproxy-protocol.
 
+## Readings
+
+* [https://news.ycombinator.com/item?id=16679760](https://news.ycombinator.com/item?id=16679760)
