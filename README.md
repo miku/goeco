@@ -2,7 +2,7 @@
 
 > Proposal for https://chemnitzer.linux-tage.de/2023/en/
 
-* 2023-03-11 -- 2023-03-12 at [Chemnitz Tech](https://www.tu-chemnitz.de/)
+* [2023-03-11 14:00 CET](https://chemnitzer.linux-tage.de/2023/de/programm/vortraege/?force=1) at [Chemnitz Tech](https://www.tu-chemnitz.de/)
 
 ## Topics
 
@@ -29,8 +29,13 @@ proxy.
 For details on the GOPROXY protocol, see
 https://golang.org/ref/mod#goproxy-protocol.
 
+> The arrival of this kind of fine-grained, widespread software reuse is one
+> of the most consequential shifts in software development over the past two
+> decades. --  [https://queue.acm.org/detail.cfm?id=3344149](https://queue.acm.org/detail.cfm?id=3344149)
+
 ## Readings
 
 * [https://news.ycombinator.com/item?id=16679760](https://news.ycombinator.com/item?id=16679760)
 * [https://research.swtch.com/deps](https://research.swtch.com/deps)
 * [https://queue.acm.org/detail.cfm?id=3344149](https://queue.acm.org/detail.cfm?id=3344149)
+* [https://hackernoon.com/building-reproducible-verifiable-binaries-with-golang](https://hackernoon.com/building-reproducible-verifiable-binaries-with-golang)
