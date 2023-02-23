@@ -8,10 +8,14 @@
 
 Two main areas: the overall software distribution setup, with source dependencies and module proxies.
 
-* [ ] Distributed packaging ecosystem (tied to version control)
+* [ ] **Distributed packaging** ecosystem (tied to version control)
+    * [ ] source code compatibility
 * [ ] Dependencies with modules (modules and packages)
 * [ ] Referencing Code (git tag, commit id, ...)
 * [ ] The "Minimal Version Selection" algorithm
+    * [ ] MVS versus other dependency resolution mechanisms
+* [ ] The "import compatibility rule"
+    * [ ] the human factor
 * [ ] Difference to other systems
 * [ ] Go package names and locators
 * [ ] Finding the source
@@ -39,3 +43,29 @@ https://golang.org/ref/mod#goproxy-protocol.
 * [https://research.swtch.com/deps](https://research.swtch.com/deps)
 * [https://queue.acm.org/detail.cfm?id=3344149](https://queue.acm.org/detail.cfm?id=3344149)
 * [https://hackernoon.com/building-reproducible-verifiable-binaries-with-golang](https://hackernoon.com/building-reproducible-verifiable-binaries-with-golang)
+
+----
+
+# Notes
+
+## MVS
+
+* efficient, algorithm in "P", 2-SAT, Horn-SAT, and Dual-Horn-SAT.
+
+> The formula corresponding to a build in minimal version selection is the AND
+> of a set of clauses, each of which is either a single positive literal (this
+> version must be installed, such as during an upgrade), a single negative
+> literal (this version is not available, such as during a downgrade), or the
+> OR of one negative and one positive literal (an implication: if this version
+> is installed, this other version must also be installed). The formula is a
+> 2-CNF formula, because each clause has at most two variables. The formula is
+> also a Horn formula, because each clause has at most one positive literal.
+> The formula is also a dual-Horn formula, because each clause has at most one
+> negative literal.
+
+...
+
+> Minimal version selection always selects the minimal (oldest) module version
+> that satisfies the overall requirements of a build.
+
+
