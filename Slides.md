@@ -19,12 +19,9 @@ header-includes: |
 [rclone](https://rclone.org/) and software developer at [Leipzig
 University Library](https://www.ub.uni-leipzig.de) on index metadata for
 [libraries in Germany](https://finc.info/)
-* learned about [Go](https://go.dev) in 11/2009 through Google Tech Talks
-* active user since 2013
+* learned about [Go](https://go.dev) in 11/2009 through Google Tech Talks, active user since 2013
 * since 2019 co-host of [Leipzig Gophers Meetup](https://golangleipzig.space/)
 * open source [contributions](https://github.com/miku), "data space"
-
-![A Library in Space](static/lis.png){height=100}
 
 ---
 
@@ -47,9 +44,22 @@ Reach out!
 
 # Overview
 
-* sustainability, as in **maintenance**
-* security, as in **bugs**
-* sustainability, as in **resource efficiency**
+* sustainability, mostly as in **maintenance**
+
+> Sustainability refers to the capacity of a system to endure. -- [An Interview
+> Study on Sustainability Concerns in Software Development
+> Projects](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8051370)
+
+* security, as in **vulnerabilities**
+* sustainability as in **resource efficiency**
+
+---
+
+# Motivation
+
+* Go is a language and experiment on how to improve the software development process itself
+* Go has inspired other ecosystems in the past (cf. [black](https://github.com/psf/black/), [sqlfmt](https://github.com/tconbeer/sqlfmt), ...)
+* Maintenance is 90% of the software life cycle
 
 ---
 
