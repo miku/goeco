@@ -2,10 +2,12 @@
 title: Sustainability and Security in the Go ecosystem
 author: Martin Czygan
 date: CLT 2023, 2023-03-11
-# code-block-font-size: \tiny
+topic: golang
+lang: en-US
 fontsize: 10pt
 urlcolor: blue
 linkstyle: bold
+aspectratio: 169
 
 header-includes: |
     \usepackage{caption}
@@ -87,10 +89,10 @@ Compatibility is at the **source level**.
 
 # Readability counts
 
+easier to maintain: mechanical changes to the source don't cause unrelated
+changes to the file's formatting; diffs show only the real changes.
 
-easier to maintain: mechanical changes to the source don’t cause unrelated changes to the file’s formatting; diffs show only the real changes.
-
-![](https://go.dev/blog/gofmt)
+[](https://go.dev/blog/gofmt)
 
 ---
 
