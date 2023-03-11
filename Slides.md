@@ -181,21 +181,14 @@ require (
 
 # Visually
 
-Go loves tools.
-
-```shell
-$ go install github.com/lucasepe/modgv@latest
-```
-
-Generate a dependency graph from `go.mod`, e.g. via:
+Go loves tools. Generate a dependency graph from `go.mod`, e.g. via
+[modgv](https://github.com/lucasepe/modgv) (cf. [imgur.com/A9DP9P9.png](https://i.imgur.com/A9DP9P9.png)):
 
 ```shell
 $ go mod graph | modgv | dot -Tpng > gomod.png
 ```
 
 ![](static/A9DP9P9.png){ width=50% }
-
-Also: [imgur.com/A9DP9P9.png](https://i.imgur.com/A9DP9P9.png)
 
 ---
 

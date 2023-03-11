@@ -9,7 +9,7 @@
 Creates slides PDF.
 
 ```
-pandoc --pdf-engine xelatex -V theme:auriga -V colorlinks=true -V linkcolor=blue -V urlcolor=red -t beamer -f markdown -o Slides.pdf Slides.md
+pandoc -t beamer -o Slides.pdf Slides.md
 ```
 
 ### Clean
