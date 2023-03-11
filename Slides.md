@@ -1,8 +1,11 @@
 ---
 title: Sustainability and Security in the Go ecosystem
-author: Martin Czygan <martin.czygan@gmail.com>
-date: 2023-03-11
-code-block-font-size: \tiny
+author: Martin Czygan
+date: CLT 2023, 2023-03-11
+# code-block-font-size: \tiny
+fontsize: 10pt
+urlcolor: blue
+linkstyle: bold
 
 header-includes: |
     \usepackage{caption}
@@ -46,9 +49,9 @@ Reach out!
 
 * sustainability, mostly as in **maintenance**
 
-> Sustainability refers to the capacity of a system to endure. -- [An Interview
-> Study on Sustainability Concerns in Software Development
-> Projects](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8051370)
+Sustainability refers to the capacity of a system to endure. -- [An Interview
+Study on Sustainability Concerns in Software Development
+Projects](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8051370)
 
 * security, as in **vulnerabilities**
 * sustainability as in **resource efficiency**
@@ -63,18 +66,56 @@ Reach out!
 
 ---
 
+# Sustainability aspects
+
+* stability
+* dependencies
+
+---
+
+# Sustainability and Stability
+
+* Go has a [Go 1 compatibility guarantee](https://go.dev/doc/go1compat)
+
+It is intended that **programs written to the Go 1 specification will continue
+to compile and run correctly, unchanged, over the lifetime of that
+specification**.
+
+Compatibility is at the **source level**.
+
+---
+
 # Surviving Software Dependencies
 
-[Surviving Software Dependencies](https://queue.acm.org/detail.cfm?id=3344149), Cox, 2019
+[Surviving Software Dependencies](https://queue.acm.org/detail.cfm?id=3344149), Cox, 2019, [10.1145/3329781.3344149](https://doi.org/10.1145/3329781.3344149)
 
-The Copay and Equifax attacks are clear warnings of real problems in the way
-software dependencies are consumed today.
+The Copay and Equifax ([2017 data
+breach](https://en.wikipedia.org/wiki/2017_Equifax_data_breach) , Apache
+Struts, financials details leaked, 148M profiles) attacks are clear warnings of
+real problems in the way software dependencies are consumed today.
+
+Various ways to cope with dependencies:
+
+* test, isolate, avoid, upgrade
+
+---
+
+# Dependency management with Go modules
+
+* Go did not have an own dependency management from the start (defered to third party tooling)
+* reuse via URL-like import path, like `github.com/fatih/color`
+
+Towards Go modules.
+
+* Go modules first appeared in [Go 1.11](https://go.dev/doc/devel/release#go1.11) (2018-08-24) ([proposal](https://go.dev/blog/versioning-proposal))
+* a Go module has a name and contains one or more packages
+* since the beginning, Go had a decentralized approach, using URL-like import path
 
 ---
 
 # Version control systems package repository
 
-Package names are locators. A decentralized infrastructure. There is not
+Package names are locators. A decentralized infrastructure. There is no
 package *central*. There is an aggregation, however,
 [pkg.go.dev](https://pkg.go.dev/).
 
@@ -109,7 +150,7 @@ No lockfile. Run `go mod tidy` and you're good.
 
 # Example `go.mod`
 
-The latest tag is used as version, but any commit id or pseudo-version would work.
+The latest tag is used as version, but any commit id or pseudo-version would work. Indirect deps are transitive dependencies (included since Go 1.17).
 
 ```
 module yellowalert
@@ -129,7 +170,7 @@ require (
 
 # Visually
 
-Go + tools = ❤️
+Go loves tools.
 
 ```shell
 $ go install github.com/lucasepe/modgv@latest
@@ -141,7 +182,7 @@ Generate a dependency graph from `go.mod`, e.g. via:
 $ go mod graph | modgv | dot -Tpng > gomod.png
 ```
 
-![](https://i.imgur.com/A9DP9P9.png)
+![](static/A9DP9P9.png){ width=50% }
 
 ---
 
@@ -162,7 +203,8 @@ without notice.
 
 ```shell
 $ go mod verify
-github.com/fatih/color v1.14.1: dir has been modified (...)
+github.com/fatih/color v1.14.1:
+    dir has been modified (...)
 ```
 
 ---
@@ -199,7 +241,14 @@ An algorithm to resolve dependencies. Fast (not NP-complete), does not require l
 * depends on *import compatibility rule*
 
 A human element required for any dependency management (e.g. we expect 1.2.3 be
-compatible with 1.2.4, and we expect a v2 to be backwards incompatible).
+compatible with 1.2.4, and we expect a v2 to be backwards incompatible) -
+**import compatibility rule**: "If an old package and a new package have the same
+import path, the new package must be backwards compatible with the old
+package."
+
+---
+
+# MVS elsewhere
 
 Other ecosystems are curious, e.g. cargo:
 
@@ -214,11 +263,12 @@ $ cargo -Z help | grep minimal-versions
 # Major Version Update
 
 Go has a strict recommendation, when it comes to major version upgrades: you
-should use a different name - i.e. a different import path, typically `.../v2`,
+should use a different name - e.g. a different import path, typically `.../v2`,
 `.../v3`, ...
 
-* golangleipzig.space/clt 1.0.0
-* golangleipzig.space/clt/v2 2.0.0
+* github.com/my/module 1.0.0
+* github.com/my/module/v2 2.0.0
+* ...
 
 ---
 
@@ -229,3 +279,66 @@ should use a different name - i.e. a different import path, typically `.../v2`,
 * very **fast** dependency resolution and high-fidelity builds
 * with vendoring, we get **reproducible builds**
 
+We can be aware of what goes into our binary.
+
+---
+
+# Security
+
+* go tools: `go vet` and various linters
+* third party tools, like [gosec](https://github.com/securego/gosec)
+* since 09/2022: [govulncheck](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck), [blog](https://go.dev/blog/vuln)
+
+Separate tool, in testing phase.
+
+> The new govulncheck command is a low-noise, reliable way for Go users to
+> learn about known vulnerabilities that may affect their projects.
+
+---
+
+# OSV Format
+
+[Open Source Vulnerability](https://ossf.github.io/osv-schema/) format, [osv.dev](https://osv.dev/)
+
+> There are many problems to solve industry-wide concerning vulnerability
+> detection, tracking, and response. One low-level problem is that there are
+> many databases and no standard interchange format.
+
+JSON schema, generic tools, like [osv-scanner](https://github.com/google/osv-scanner)
+
+> OSV-Scanner parses lockfiles, SBOMs, and git directories to determine your
+> project’s open source dependencies. These dependencies are matched against
+> the OSV database via the OSV.dev API and known vulnerabilities are returned
+> to you in the output.
+
+---
+
+# Flow
+
+![](static/vuln-arch.png)
+
+From: [blog/vuln](https://go.dev/blog/vuln)
+
+---
+
+# Example
+
+```
+$ # z esbulk
+$ govulncheck ./...
+```
+
+---
+
+# Wrap up
+
+* source code *compatibility guarantee*
+* Go modules use *minimal version selection*, circumventing some potential issues stemming from the complexity of dependency management
+* *distributed package management*, with central elements added for performance and reliability (proxy)
+
+---
+
+# Thanks
+
+* Slides: [github.com/miku/goeco](https://github.com/miku/goeco)
+* Leipzig Gophers: [golangleipzig.space](https://golangleipzig.space)
