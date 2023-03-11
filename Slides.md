@@ -19,12 +19,26 @@ header-includes: |
 
 * open data engineer at [Internet Archive](https://archive.org), working on
   [scholar.archive.org](https://scholar.archive.org) and
-[rclone](https://rclone.org/) and software developer at [Leipzig
+[rclone](https://rclone.org/); software developer at [Leipzig
 University Library](https://www.ub.uni-leipzig.de) on index metadata for
 [libraries in Germany](https://finc.info/)
 * learned about [Go](https://go.dev) in 11/2009 through Google Tech Talks, active user since 2013
 * since 2019 co-host of [Leipzig Gophers Meetup](https://golangleipzig.space/)
-* open source [contributions](https://github.com/miku), "data space"
+* open source [contributions](https://github.com/miku), mostly "small tools"
+
+---
+
+# Internet Archive
+
+Founded in 1996, in 2023 it hosts:
+
+* [Wayback Machine](https://archive.org/web/) -- 735B web pages, 770M pages captures per day
+* [Books](https://archive.org/details/books): 41M texts in various collections
+* 7M books digitized
+* 890000 [software titles](https://archive.org/details/software), including [games](https://archive.org/details/classicpcgames), [calculators](https://archive.org/details/calculatordrawer),
+* and more: movies, television, audio, images
+
+A library with 2M unique website users per day.
 
 ---
 
@@ -62,7 +76,7 @@ Projects](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8051370)
 
 * Go is a language and experiment on how to improve the software development process itself
 * Go has inspired other ecosystems in the past (cf. [black](https://github.com/psf/black/), [sqlfmt](https://github.com/tconbeer/sqlfmt), ...)
-* Maintenance is 90% of the software life cycle
+* Maintenance is 90% of the software life cycle (...)
 
 ---
 
@@ -82,6 +96,15 @@ to compile and run correctly, unchanged, over the lifetime of that
 specification**.
 
 Compatibility is at the **source level**.
+
+---
+
+# Readability counts
+
+
+easier to maintain: mechanical changes to the source don’t cause unrelated changes to the file’s formatting; diffs show only the real changes.
+
+![](https://go.dev/blog/gofmt)
 
 ---
 
