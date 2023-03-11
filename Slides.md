@@ -336,9 +336,18 @@ From: [blog/vuln](https://go.dev/blog/vuln)
 
 # Example
 
+An application, using Go 1.20.1 (after Go 1.20.2 has been released).
+
 ```
-$ # z esbulk
+$ git clone git@github.com/miku/esbulk && cd esbulk
 $ govulncheck ./...
+...
+
+Scanning your code and 148 packages across 6 dependent modules for known
+vulnerabilities...
+Your code is affected by 1 vulnerability from the Go standard library.
+
+...
 ```
 
 ---
