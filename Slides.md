@@ -184,6 +184,8 @@ $ go mod graph | modgv | dot -Tpng > gomod.png
 
 ![](static/A9DP9P9.png){ width=50% }
 
+Also: [imgur.com/A9DP9P9.png](https://i.imgur.com/A9DP9P9.png)
+
 ---
 
 # Example `go.sum`
@@ -351,6 +353,7 @@ numbers
 * source code *compatibility guarantee*
 * Go modules use *minimal version selection*, circumventing some potential issues stemming from the complexity of dependency management
 * *distributed package management*, with central elements added for performance and reliability (proxy)
+* balance between performance and ease of use
 
 ---
 
