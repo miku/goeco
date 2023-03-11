@@ -28,20 +28,6 @@ University Library](https://www.ub.uni-leipzig.de) on index metadata for
 
 ---
 
-# Internet Archive
-
-Founded in 1996, in 2023 it hosts:
-
-* [Wayback Machine](https://archive.org/web/) -- 735B web pages, 770M pages captures per day
-* [Books](https://archive.org/details/books): 41M texts in various collections
-* 7M books digitized
-* 890000 [software titles](https://archive.org/details/software), including [games](https://archive.org/details/classicpcgames), [calculators](https://archive.org/details/calculatordrawer),
-* and more: movies, television, audio, images
-
-A library with 2M unique website users per day.
-
----
-
 # Leipzig Gophers
 
 * *est. 2019*, [golangleipzig.space](https://golangleipzig.space)
