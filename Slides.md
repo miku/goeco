@@ -330,6 +330,22 @@ $ govulncheck ./...
 
 ---
 
+# Final bit: energy efficiency
+
+* Paper on energy efficiency of programming languages: [Ranking Programming Languages by Energy Efficiency](https://haslab.github.io/SAFER/scp21.pdf) (2021)
+* Go shines in category "lowest peak memory usage": [https://github.com/miku/goenergy#where-go-shines](https://github.com/miku/goenergy#where-go-shines)
+* balance between performance and ease of use
+
+Some anecdata.
+
+* anecdata: a rewrite (of an internal project, written in a popular language) in Go used only 20% of the resources
+* single data point: data web service, about 100 req/s sustained on commodity
+  HW, simple web service on a 3W ARM (Dual-Core Cortex-A7 ARM CPU)
+[cubietruck](https://linux-sunxi.org/Cubietech_Cubietruck) (2013) with similar
+numbers
+
+---
+
 # Wrap up
 
 * source code *compatibility guarantee*
