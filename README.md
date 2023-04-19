@@ -4,7 +4,7 @@ A short talk about modules, vulnerability database and energy efficiency.
 
 > [2023-03-11 14:00 CET](https://chemnitzer.linux-tage.de/2023/de/programm/vortraege/?force=1) at [Chemnitz Tech](https://www.tu-chemnitz.de/)
 
-* [Slides](https://github.com/miku/goeco/blob/main/Slides.md), [PDF](https://github.com/miku/goeco/blob/main/Slides.pdf)
+* [Slides](https://github.com/miku/goeco/blob/main/Slides.md), [PDF](https://github.com/miku/goeco/blob/main/Slides.pdf), [Media](https://media.ccc.de/v/clt23-234-sustainability-and-security-in-the-go-ecosystem)
 
 ----
 
